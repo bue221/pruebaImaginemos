@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@material-ui/core";
+import { Button, Grid, Hidden } from "@material-ui/core";
 
 import ArrowFoward from "../../../../assets/svg/arrowFoward";
 import headerImage from "../../../../assets/images/headerimage.png";
@@ -12,19 +12,38 @@ const Header = () => {
   return (
     <div className={root}>
       <div className={container}>
-        <div>
-          <img src={headerImage} width="50%" alt="header" />
-        </div>
-        <div className={titleDiv}>
-          <h1 className={h1}>$0 delivery for 30 days! 🎉</h1>
-          <p className={p}>$0 delivery free for orders over $10 for 30 days!</p>
-        </div>
+        <Grid container justifyContent="center" alignItems="center">
+          <Grid item xs={12} md={6}>
+            <div>
+              <img src={headerImage} width="50%" alt="header" />
+            </div>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <div className={titleDiv}>
+              <h1 className={h1}>$0 delivery for 30 days! 🎉</h1>
+              <p className={p}>
+                $0 delivery free for orders over $10 for 30 days!
+              </p>
+            </div>
+          </Grid>
+          <Hidden smUp>
+            <Grid item xs={12}>
+              <div className={btnDiv}>
+                <Button className={btn} endIcon={<ArrowFoward />}>
+                  Learn more
+                </Button>
+              </div>
+            </Grid>
+          </Hidden>
+        </Grid>
       </div>
-      <div className={btnDiv}>
-        <Button className={btn} endIcon={<ArrowFoward />}>
-          Learn more
-        </Button>
-      </div>
+      <Hidden smDown>
+        <div className={btnDiv}>
+          <Button className={btn} endIcon={<ArrowFoward />}>
+            Learn more
+          </Button>
+        </div>
+      </Hidden>
     </div>
   );
 };
