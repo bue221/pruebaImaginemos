@@ -6,6 +6,7 @@ import { PATHS } from "../constants/routes.constants";
 const HomePage = lazy(() => import("../components/Pages/Home"));
 const LoginPage = lazy(() => import("../components/Pages/Login"));
 const RegisterPage = lazy(() => import("../components/Pages/Register"));
+const NotFoundPage = lazy(() => import("../components/Pages/NotFoundPage"));
 
 export const Routes: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ export const Routes: React.FC = () => {
       <Route exact path={PATHS.HOME} component={HomePage} />
       <Route path={PATHS.LOGIN} component={LoginPage} />
       <Route path={PATHS.REGISTER} component={RegisterPage} />
-      {/* <Route path='' component={NotFoundPage} /> */}
+      <Route path="" component={NotFoundPage} />
     </Switch>
   );
 };
