@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useStyles } from "./style";
 
-import { Paper } from "@material-ui/core";
+import { Grid, Paper } from "@material-ui/core";
 
 import Hamburger from "../../../../assets/svg/hamburger";
 
@@ -17,8 +17,15 @@ const Categories = ({
   value: any;
   handleChange: any;
 }) => {
-  const { root, title, divIcon, divCategory, containerCategory, paperIcon } =
-    useStyles();
+  const {
+    root,
+    title,
+    divIcon,
+    divCategory,
+    containerCategory,
+    paperIcon,
+    gridSelectBtn,
+  } = useStyles();
   const [category, setCategory] = useState(1);
 
   const handleChangeCategory = (id: number) => {
@@ -28,13 +35,19 @@ const Categories = ({
   return (
     <>
       <div className={root}>
-        <h1 className={title}>
-          Restaurants{" "}
-          <div className={divIcon}>
-            <Hamburger />
-          </div>
-        </h1>
-        <SelectButton />
+        <Grid container justify="space-around" alignItems="center">
+          <Grid item xs={12} md={6}>
+            <h1 className={title}>
+              Restaurants{" "}
+              <div className={divIcon}>
+                <Hamburger />
+              </div>
+            </h1>
+          </Grid>
+          <Grid item xs={12} md={6} className={gridSelectBtn}>
+            <SelectButton />
+          </Grid>
+        </Grid>
       </div>
       <div className={divCategory}>
         <div className={containerCategory}>

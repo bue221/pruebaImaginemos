@@ -17,7 +17,7 @@ export const useStyles = makeStyles(() => ({
     background: "#fff",
     borderRadius: 10,
     boxShadow: "0 10px 25px rgba(0, 0, 0, .3)",
-    width: 450,
+    maxWidth: 450,
     padding: "8px 24px",
   },
   padding: {

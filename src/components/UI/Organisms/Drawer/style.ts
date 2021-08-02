@@ -75,5 +75,47 @@ export const useStyles = makeStyles((theme: Theme) =>
     containerChildren: {
       margin: "0 50px",
     },
+    itemsBadge: {
+      background: "#ffd644",
+      padding: "0.4rem 0.7rem",
+      borderRadius: "5px",
+      margin: "20px",
+    },
+    containerMyOrder: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      textAlign: "initial",
+      marginLeft: "4em",
+      marginTop: "3em",
+    },
+    margin: {
+      margin: " 2px 0",
+    },
+    infoDelivery: {
+      background: "#5539a3",
+      margin: "1em 3em",
+      [theme.breakpoints.down("md")]: {
+        margin: "1em",
+      },
+      padding: "1em",
+      borderRadius: "20px",
+      color: "white",
+    },
+    containerDelivery: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    btnDelivery: {
+      color: "#e0ab69",
+      textTransform: "initial",
+    },
+    btnTime: {
+      background: "rgb(102, 72, 156)",
+      display: "flex",
+      padding: ".4rem",
+      borderRadius: "0.2rem",
+    },
   })
 );

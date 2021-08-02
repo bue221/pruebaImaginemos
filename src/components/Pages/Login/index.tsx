@@ -31,6 +31,9 @@ const Login = () => {
     if (userState.user !== null && !userState.loading) {
       history.push("/home");
     }
+    if (!!userState.error) {
+      alert(userState.error);
+    }
   }, [userState, history, user, dispatch]);
 
   useEffect(() => {

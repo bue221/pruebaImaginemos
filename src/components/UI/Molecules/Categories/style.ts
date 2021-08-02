@@ -2,10 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 export const useStyles = makeStyles(() => ({
   root: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: 20,
-    alignItems: "center",
+    margin: "inherit",
   },
   title: {
     display: "flex",
@@ -26,5 +23,9 @@ export const useStyles = makeStyles(() => ({
   paperIcon: {
     borderRadius: "50%",
     padding: "0.3em",
+  },
+  gridSelectBtn: {
+    display: "flex",
+    justifyContent: "flex-end",
   },
 }));
