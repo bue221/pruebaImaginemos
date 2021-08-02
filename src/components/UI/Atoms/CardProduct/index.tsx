@@ -1,5 +1,7 @@
 import React from "react";
 
+import Start from "../../../../assets/svg/start";
+
 import { useStyles } from "./style";
 
 interface Product {
@@ -26,9 +28,15 @@ const CardProduct = ({ product }: { product: Product }) => {
         </div>
         <div className={textDiv}>
           <h3>{name}</h3>
-          <p>
-            <strong>{qualification}</strong> $$ {price}
-          </p>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <p style={{ display: "flex" }}>
+              <div style={{ display: "flex", marginRight: "1em" }}>
+                <Start />
+              </div>
+              <strong>{qualification}</strong>
+            </p>
+            <p>$ {price}</p>
+          </div>
         </div>
       </div>
     </div>

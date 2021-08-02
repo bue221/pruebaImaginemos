@@ -42,15 +42,16 @@ export const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("md")]: {
         width: 240,
       },
-      background: "#fdfdfb",
+      background: "#fafbf8",
     },
     drawerHeader: {
       display: "flex",
       alignItems: "center",
-      padding: theme.spacing(0, 1),
+      // padding: theme.spacing(0, 1),
       // necessary for content to be below app bar
       ...theme.mixins.toolbar,
-      justifyContent: "flex-start",
+      justifyContent: "flex-end",
+      // marginTop: 30,
     },
     content: {
       flexGrow: 1,
