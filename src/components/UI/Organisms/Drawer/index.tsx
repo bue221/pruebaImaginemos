@@ -13,6 +13,7 @@ import Navbar from "../../Molecules/Navbar";
 import Header from "../../Molecules/Header";
 import Categories from "../../Molecules/Categories";
 import Products from "../../Molecules/Products";
+
 import Account from "../../../../assets/svg/account";
 import Time from "../../../../assets/svg/time";
 
@@ -123,7 +124,7 @@ export default function PersistentDrawerRight() {
                   borderRadius: "0.2rem",
                 }}
               >
-                <Time />
+                <Time color="#c4a182" />
               </div>
             </div>
             <p>35 min</p>{" "}

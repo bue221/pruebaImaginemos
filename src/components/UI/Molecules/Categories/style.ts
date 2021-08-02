@@ -5,6 +5,7 @@ export const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "space-between",
     marginTop: 20,
+    alignItems: "center",
   },
   title: {
     display: "flex",

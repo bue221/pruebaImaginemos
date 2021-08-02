@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 import { useStyles } from "./style";
 
-import { MenuItem, Paper, Select } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 
 import Hamburger from "../../../../assets/svg/hamburger";
 
 import data from "../../../../commons/utils/categories.json";
+
+import SelectButton from "../../Atoms/SelectButton";
 
 const Categories = ({
   value,
@@ -32,16 +34,7 @@ const Categories = ({
             <Hamburger />
           </div>
         </h1>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={value}
-          onChange={handleChange}
-        >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
+        <SelectButton />
       </div>
       <div className={divCategory}>
         <div className={containerCategory}>

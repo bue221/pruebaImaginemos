@@ -1,56 +1,53 @@
-import { Button } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { loginWithGoogle, onAuthStateChanged } from "../../../app/firebase";
+
+import { Button } from "@material-ui/core";
+
+import { onAuthStateChanged } from "../../../app/firebase";
+
 import Google from "../../../assets/svg/google";
 
+import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+import {
+  loginAsync,
+  selectUser,
+  changeUser,
+} from "../../../features/user/userSlice";
+
+import { useStyles } from "./style";
+
 const Login = () => {
+  const { root, container, padding } = useStyles();
   let history = useHistory();
+
+  const userState = useAppSelector(selectUser);
+  const dispatch = useAppDispatch();
 
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     onAuthStateChanged(setUser);
-    if (user !== null) {
+    dispatch(changeUser(user));
+    if (userState.user !== null && !userState.loading) {
       history.push("/home");
     }
-  }, [user, history]);
+  }, [userState, history, user, dispatch]);
+
+  useEffect(() => {
+    if (userState.user !== null && !userState.loading) {
+      history.push("/home");
+    }
+  }, [userState, history]);
 
   const handleLogin = () => {
-    loginWithGoogle()
-      .then((res) => {
-        history.push("/home");
-        setUser(res);
-      })
-      .catch((err) => alert(err));
+    dispatch(loginAsync());
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100vh",
-        backgroundImage:
-          "radial-gradient(#f7a52a 1px, transparent 1px), radial-gradient(#f7a52a 1px, transparent 1px)",
-        backgroundSize: "50px 50px",
-        backgroundPosition: "0 0, 25px 25px",
-        padding: 0,
-        margin: 0,
-        display: "grid",
-        placeItems: "center",
-      }}
-    >
-      <div
-        style={{
-          background: "#fff",
-          borderRadius: 10,
-          boxShadow: "0 10px 25px rgba(0, 0, 0, .3)",
-          width: 450,
-          padding: "8px 24px",
-        }}
-      >
-        <div style={{ padding: "2em 0" }}>
-          <div style={{ padding: "2em 0" }}>
+    <div className={root}>
+      <div className={container}>
+        <div className={padding}>
+          <div className={padding}>
             <h1>Chuckwudi</h1>
             <p>Order your delivery 🍖</p>
           </div>
