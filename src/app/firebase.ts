@@ -14,3 +14,12 @@ const firebaseConfig = {
 
 export const db = firebase.firestore();
 export const auth = firebase.auth();
+
+export const loginWithGoogle = () => {
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  return auth.signInWithPopup(googleProvider);
+};
+
+export const onAuthStateChanged = (onChange: any) => {
+  return firebase.auth().onAuthStateChanged((user) => onChange(user));
+};
