@@ -9,6 +9,15 @@ import { useStyles } from "./style";
 
 const Header = () => {
   const { root, container, btnDiv, titleDiv, h1, p, btn } = useStyles();
+
+  const BtnLearnMore = () => (
+    <div className={btnDiv}>
+      <Button className={btn} endIcon={<ArrowFoward color="#fe6e37" />}>
+        Learn more
+      </Button>
+    </div>
+  );
+
   return (
     <div className={root}>
       <div className={container}>
@@ -28,21 +37,13 @@ const Header = () => {
           </Grid>
           <Hidden smUp>
             <Grid item xs={12}>
-              <div className={btnDiv}>
-                <Button className={btn} endIcon={<ArrowFoward />}>
-                  Learn more
-                </Button>
-              </div>
+              <BtnLearnMore />
             </Grid>
           </Hidden>
         </Grid>
       </div>
       <Hidden smDown>
-        <div className={btnDiv}>
-          <Button className={btn} endIcon={<ArrowFoward />}>
-            Learn more
-          </Button>
-        </div>
+        <BtnLearnMore />
       </Hidden>
     </div>
   );

@@ -1,3 +1,4 @@
+import { IconButton } from "@material-ui/core";
 import React from "react";
 
 import Start from "../../../../assets/svg/start";
@@ -13,8 +14,15 @@ interface Product {
   image: string;
 }
 
-const CardProduct = ({ product }: { product: Product }) => {
-  const { root, container, divImg, img, divTime, textDiv } = useStyles();
+const CardProduct = ({
+  product,
+  onClick,
+}: {
+  product: Product;
+  onClick: any;
+}) => {
+  const { root, container, divImg, img, divTime, textDiv, divAdd } =
+    useStyles();
   const { id, image, name, price, qualification, time } = product;
 
   return (
@@ -24,6 +32,9 @@ const CardProduct = ({ product }: { product: Product }) => {
           <img className={img} src={image} alt={name} />
           <div className={divTime}>
             <p>{time}</p>
+          </div>
+          <div className={divAdd}>
+            <IconButton onClick={onClick}>+</IconButton>
           </div>
         </div>
         <div className={textDiv}>

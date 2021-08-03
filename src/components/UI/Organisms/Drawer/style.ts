@@ -117,5 +117,33 @@ export const useStyles = makeStyles((theme: Theme) =>
       padding: ".4rem",
       borderRadius: "0.2rem",
     },
+    btnCheckout: {
+      padding: "1em 2em",
+      background: "#ffd644",
+      textTransform: "initial",
+      marginTop: "1em",
+      borderRadius: "0",
+      borderTopLeftRadius: "20px",
+      borderBottomLeftRadius: "20px",
+    },
+    textfield: {
+      width: 70,
+    },
+    margin2: {
+      marginLeft: "2em",
+    },
+    containerBacan: {
+      display: "flex",
+      justifyContent: "space-between",
+    },
+    priceContainer: {
+      display: "flex",
+      justifyContent: "space-evenly",
+      alignItems: "baseline",
+    },
+    containerItemsShopping: {
+      height: 200,
+      overflow: "auto",
+    },
   })
 );

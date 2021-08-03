@@ -28,4 +28,11 @@ export const useStyles = makeStyles(() => ({
   textDiv: {
     textAlign: "initial",
   },
+  divAdd: {
+    top: "4.9em",
+    position: "absolute",
+    background: "#ffc1078c",
+    right: "0",
+    borderBottomRightRadius: "20px",
+  },
 }));
