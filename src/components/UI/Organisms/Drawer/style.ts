@@ -142,6 +142,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       alignItems: "baseline",
     },
     containerItemsShopping: {
+      margin: "40px 0",
       height: 200,
       overflow: "auto",
     },

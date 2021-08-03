@@ -189,7 +189,7 @@ export default function PersistentDrawerRight() {
           </div>
           <Button
             className={classes.btnCheckout}
-            endIcon={<ArrowFoward color="white" />}
+            endIcon={<ArrowFoward color="black" />}
             onClick={realizarPedido}
           >
             Checkout
